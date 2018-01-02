@@ -1,18 +1,18 @@
 package com.pojo;
 
-import java.sql.Timestamp;
+import java.sql.Date;
 
 public class ItripLabelDic {
-  private Long id;
+  private Integer id;
   private String name;
   private String value;
   private String description;
-  private Long parentId;
+  private Integer parentId;
   private String pic;
-  private java.sql.Timestamp creationDate;
-  private Long createdBy;
-  private java.sql.Timestamp modifyDate;
-  private Long modifiedBy;
+  private Date creationDate;
+  private Integer createdBy;
+  private Date modifyDate;
+  private Integer modifiedBy;
 
   @Override
   public String toString() {
@@ -30,11 +30,11 @@ public class ItripLabelDic {
             '}';
   }
 
-  public Long getId() {
+  public Integer getId() {
     return id;
   }
 
-  public void setId(Long id) {
+  public void setId(Integer id) {
     this.id = id;
   }
 
@@ -62,11 +62,11 @@ public class ItripLabelDic {
     this.description = description;
   }
 
-  public Long getParentId() {
+  public Integer getParentId() {
     return parentId;
   }
 
-  public void setParentId(Long parentId) {
+  public void setParentId(Integer parentId) {
     this.parentId = parentId;
   }
 
@@ -78,35 +78,35 @@ public class ItripLabelDic {
     this.pic = pic;
   }
 
-  public Timestamp getCreationDate() {
+  public Date getCreationDate() {
     return creationDate;
   }
 
-  public void setCreationDate(Timestamp creationDate) {
+  public void setCreationDate(Date creationDate) {
     this.creationDate = creationDate;
   }
 
-  public Long getCreatedBy() {
+  public Integer getCreatedBy() {
     return createdBy;
   }
 
-  public void setCreatedBy(Long createdBy) {
+  public void setCreatedBy(Integer createdBy) {
     this.createdBy = createdBy;
   }
 
-  public Timestamp getModifyDate() {
+  public Date getModifyDate() {
     return modifyDate;
   }
 
-  public void setModifyDate(Timestamp modifyDate) {
+  public void setModifyDate(Date modifyDate) {
     this.modifyDate = modifyDate;
   }
 
-  public Long getModifiedBy() {
+  public Integer getModifiedBy() {
     return modifiedBy;
   }
 
-  public void setModifiedBy(Long modifiedBy) {
+  public void setModifiedBy(Integer modifiedBy) {
     this.modifiedBy = modifiedBy;
   }
 }

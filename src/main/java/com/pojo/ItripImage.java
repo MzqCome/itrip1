@@ -1,19 +1,19 @@
 package com.pojo;
 
-import java.sql.Timestamp;
+import java.sql.Date;
 
 public class ItripImage {
-  private Long id;
-  private Long itrId;
-  private Long itrId2;
+  private Integer id;
+  private Integer itrId;
+  private Integer itrId2;
   private String type;
-  private Long targetId;
-  private Long position;
+  private Integer targetId;
+  private Integer position;
   private String imgUrl;
-  private java.sql.Timestamp creationDate;
-  private Long createdBy;
-  private java.sql.Timestamp modifyDate;
-  private Long modifiedBy;
+  private Date creationDate;
+  private Integer createdBy;
+  private Date modifyDate;
+  private Integer modifiedBy;
 
   @Override
   public String toString() {
@@ -32,27 +32,27 @@ public class ItripImage {
             '}';
   }
 
-  public Long getId() {
+  public Integer getId() {
     return id;
   }
 
-  public void setId(Long id) {
+  public void setId(Integer id) {
     this.id = id;
   }
 
-  public Long getItrId() {
+  public Integer getItrId() {
     return itrId;
   }
 
-  public void setItrId(Long itrId) {
+  public void setItrId(Integer itrId) {
     this.itrId = itrId;
   }
 
-  public Long getItrId2() {
+  public Integer getItrId2() {
     return itrId2;
   }
 
-  public void setItrId2(Long itrId2) {
+  public void setItrId2(Integer itrId2) {
     this.itrId2 = itrId2;
   }
 
@@ -64,19 +64,19 @@ public class ItripImage {
     this.type = type;
   }
 
-  public Long getTargetId() {
+  public Integer getTargetId() {
     return targetId;
   }
 
-  public void setTargetId(Long targetId) {
+  public void setTargetId(Integer targetId) {
     this.targetId = targetId;
   }
 
-  public Long getPosition() {
+  public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(Long position) {
+  public void setPosition(Integer position) {
     this.position = position;
   }
 
@@ -88,35 +88,35 @@ public class ItripImage {
     this.imgUrl = imgUrl;
   }
 
-  public Timestamp getCreationDate() {
+  public Date getCreationDate() {
     return creationDate;
   }
 
-  public void setCreationDate(Timestamp creationDate) {
+  public void setCreationDate(Date creationDate) {
     this.creationDate = creationDate;
   }
 
-  public Long getCreatedBy() {
+  public Integer getCreatedBy() {
     return createdBy;
   }
 
-  public void setCreatedBy(Long createdBy) {
+  public void setCreatedBy(Integer createdBy) {
     this.createdBy = createdBy;
   }
 
-  public Timestamp getModifyDate() {
+  public Date getModifyDate() {
     return modifyDate;
   }
 
-  public void setModifyDate(Timestamp modifyDate) {
+  public void setModifyDate(Date modifyDate) {
     this.modifyDate = modifyDate;
   }
 
-  public Long getModifiedBy() {
+  public Integer getModifiedBy() {
     return modifiedBy;
   }
 
-  public void setModifiedBy(Long modifiedBy) {
+  public void setModifiedBy(Integer modifiedBy) {
     this.modifiedBy = modifiedBy;
   }
 }
