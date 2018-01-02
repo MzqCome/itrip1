@@ -16,13 +16,13 @@ import java.util.Date;
  */
 public class ItripProductStore {
     private Integer id;
-    private Integer productType;
-    private Integer productId;
-    private Integer store;
-    private Date creationDate;
-    private Integer createdBy;
-    private Date modifyDate;
-    private Integer modifiedBy;
+    private Integer productType;//商品类型
+    private Integer productId;//商品id
+    private Integer store;//商品库存
+    private Date creationDate;//创建时间
+    private Integer createdBy;//创建者
+    private Date modifyDate;//修改时间
+    private Integer modifiedBy;//修改者
 
     @Override
     public String toString() {

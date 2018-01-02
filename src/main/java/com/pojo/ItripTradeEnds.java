@@ -9,8 +9,8 @@ package com.pojo;
  */
 public class ItripTradeEnds {
     private Integer id;
-    private String orderNo;
-
+    private String orderNo;//订单编号(注意非支付宝交易编号tradeNo)
+    private Integer flag;//标识字段(默认0：未处理；1：处理中)
     @Override
     public String toString() {
         return "ItripTradeEnds{" +
@@ -44,5 +44,5 @@ public class ItripTradeEnds {
         this.flag = flag;
     }
 
-    private Integer flag;
+
 }

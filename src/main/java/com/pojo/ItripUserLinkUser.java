@@ -22,11 +22,11 @@ public class ItripUserLinkUser {
     private String linkIdCard;
     private String linkPhone;
     private Integer userId;
-    private Date creationDate;
-    private Integer createdBy;
-    private Date modifyDate;
-    private Integer modifiedBy;
-    private Integer linkIdCardType;
+    private Date creationDate;//创建时间
+    private Integer createdBy;//创建者
+    private Date modifyDate;//修改时间
+    private Integer modifiedBy;//修改者
+    private Integer linkIdCardType;//证件类型
 
     @Override
     public String toString() {
