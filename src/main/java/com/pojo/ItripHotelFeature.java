@@ -9,7 +9,7 @@ public class ItripHotelFeature {
   private Date creationDate; //预订时间
   private Integer createdBy; //
   private Date modifyDate; //支付完成时间
-  private Integer modifiedBy; //
+  private Integer modifiedBy;
 
   @Override
   public String toString() {
