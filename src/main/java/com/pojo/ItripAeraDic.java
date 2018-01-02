@@ -6,20 +6,20 @@ import java.util.Date;
  * Created by Administrator on 2018/1/2 0002.
  */
 public class ItripAeraDic {
-    private Integer id;
-    private String name;
-    private String areaNo;
-    private Integer parent;
-    private Integer isActivated;
-    private Integer isTradingArea;
-    private Integer isHot;
-    private Integer level;
-    private Integer isChina;
+    private Integer id;//主键
+    private String name;//区域名称
+    private String areaNo;//区域编号
+    private Integer parent;//父级区域
+    private Integer isActivated;//0:未激活 1:已激活
+    private Integer isTradingArea;//是否是商圈(0:不是 1:是)
+    private Integer isHot;//(0:不是 1：是)
+    private Integer level;//区域级别(0:国家级 1:省级 2:市级 3:县/区)
+    private Integer isChina;//1:国内 2：国外
     private String pinyin;
-    private Date creationDate;
-    private Integer createdBy;
-    private Date modifyDate;
-    private Integer modifiedBy;
+    private Date creationDate;//创建时间
+    private Integer createdBy;//创建人
+    private Date modifyDate;//修改日期
+    private Integer modifiedBy;//修改日期
 
     @Override
     public String toString() {
