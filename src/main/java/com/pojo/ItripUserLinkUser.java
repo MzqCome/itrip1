@@ -18,7 +18,7 @@ import java.util.Date;
  */
 public class ItripUserLinkUser {
     private Integer id;
-    private String linkUserName;
+    private String linkUserName;//
     private String linkIdCard;
     private String linkPhone;
     private Integer userId;
