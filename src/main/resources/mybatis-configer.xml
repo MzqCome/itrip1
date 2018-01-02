@@ -10,6 +10,6 @@
         <setting name="lazyLoadingEnabled" value="false" />
     </settings>
     <typeAliases>
-        <package name="com.entity"/>
+        <package name="com.pojo"/>
     </typeAliases>
 </configuration>

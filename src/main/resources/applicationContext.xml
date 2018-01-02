@@ -8,7 +8,7 @@
     <context:property-placeholder location="classpath:database.properties"/>
     <bean id="dataResource" class="org.apache.commons.dbcp.BasicDataSource">
         <property name="driverClassName" value="${jdbc.driver}"/>
-        <property name="url" value="${jdbc.url}"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/itrip"/>
         <property name="username" value="${jdbc.uname}"/>
         <property name="password" value="${jdbc.pwd}"/>
     </bean>
