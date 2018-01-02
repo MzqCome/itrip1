@@ -4,7 +4,7 @@ import java.sql.Timestamp;
 
 public class ItripOrderLinkUser {
   private Long id;
-  private Long itrId;//
+  private Long itrId;
   private Long orderId;
   private Long linkUserId;
   private String linkUserName;
