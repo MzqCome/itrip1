@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-<<<<<<< HEAD
-    <data-source source="LOCAL" name="itrip@localhost" uuid="1a6ef754-ee4d-40c0-97d7-1e914c8ca51a">
-=======
-    <data-source source="LOCAL" name="itrip@localhost" uuid="957ff288-ffce-4e11-879f-87c34eb73417">
->>>>>>> origin/master
-      <driver-ref>mysql</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/itrip</jdbc-url>
-      <driver-properties>
-        <property name="autoReconnect" value="true" />
-        <property name="zeroDateTimeBehavior" value="convertToNull" />
-        <property name="tinyInt1isBit" value="false" />
-        <property name="characterEncoding" value="utf8" />
-        <property name="characterSetResults" value="utf8" />
-        <property name="yearIsDateType" value="false" />
-      </driver-properties>
-    </data-source>
-    <data-source source="LOCAL" name="itrip@localhost [2]" uuid="ff9a543c-5436-49d2-b0c3-4355160786b7">
+    <data-source source="LOCAL" name="itrip@localhost" uuid="eb534d85-7ef6-4ea8-ab24-22afbcb52264">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>

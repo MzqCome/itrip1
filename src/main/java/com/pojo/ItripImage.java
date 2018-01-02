@@ -3,13 +3,13 @@ package com.pojo;
 import java.sql.Date;
 
 public class ItripImage {
-  private Integer id;
-  private Integer itrId;
-  private Integer itrId2;
-  private String type;
-  private Integer targetId;
-  private Integer position;
-  private String imgUrl;
+  private Integer id;//主键
+  private Integer itrId;//主键
+  private Integer itrId2;//主键
+  private String type;//图片类型(0:酒店图片1:房间图片2:评论图片)
+  private Integer targetId;//关联id
+  private Integer position;//图片s上传顺序位置
+  private String imgUrl;//图片地址
   private Date creationDate;
   private Integer createdBy;
   private Date modifyDate;
