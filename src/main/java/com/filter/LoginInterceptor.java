@@ -16,13 +16,13 @@ public class LoginInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         HttpSession session=request.getSession();
-        ItripUser user = new ItripUser();
-        if(user==null){
-            System.out.println("no user in LoginInterceptor!!!");
-            request.getRequestDispatcher("/WEB-INF/jsp/403.jsp").include(request,response);
+            ItripUser user = new ItripUser();
+            if(user==null){
+                System.out.println("no user in LoginInterceptor!!!");
+                request.getRequestDispatcher("/WEB-INF/jsp/403.jsp").include(request,response);
 
-            //本次访问被拦截，业务逻辑不继续执行
-            return false;
+                //本次访问被拦截，业务逻辑不继续执行
+                return false;
         }
 
 
