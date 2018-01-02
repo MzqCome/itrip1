@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.order.ItripHotelOrderMapper">
+    
+    <select id="listAllOrderByUserId" resultType="ItripHotelOrder">
+        SELECT * FROM itrip_hotel_order WHERE userId = #{userId}
+        ORDER BY `creationDate` DESC
+    </select>
+
+    <select id="listOradeBySelect" resultType="ItripHotelOrder">
+        SELECT * FROM itrip_hotel_order
+        <trim prefix="where" prefixOverrides="and | or">
+            <if test="orderStatus != null and orderStatus != ''">
+                AND orderStatus = #{orderStatus}
+            </if>
+            <if test="orderType != null and orderType != ''">
+                and orderType = #{orderType}
+            </if>
+            <if test="creationDate != null and creationDate != ''">
+                and creationDate = #{creationDate}
+            </if>
+            <if test="linkUserName != null and linkUserName != ''">
+                and linkUserName like CONCAT ('%',#{linkUserName},'%')
+            </if>
+            <if test="orderNo != null and orderNo != ''">
+                and orderNo = #{orderNo}
+            </if>
+        </trim>
+        ORDER BY `creationDate` DESC
+    </select>
+    
+    <select id="queryOradeById" resultType="ItripHotelOrder">
+      SELECT o.`checkInDate`,o.`checkOutDate`
+    o.`creationDate`,r.`roomPrice`,r.`roomTitle`,
+    r.`satisfaction`,h.`hotelName`,h.`address`,
+    h.`hotelType`,h.`hotelLevel`,
+     FROM `itrip_hotel_order` AS o,`itrip_hotel_room` AS r,`itrip_hotel` AS h
+    WHERE o.id = #{orderId}
+ AND o.`hotelId` = h.id AND o.`roomId` = r.id
+    </select>
+    <delete id="delOrder" parameterType="Integer">
+         DELETE FROM `itrip`.`itrip_hotel_order` WHERE `id` = #{oradeId}
+    </delete>
+</mapper>
