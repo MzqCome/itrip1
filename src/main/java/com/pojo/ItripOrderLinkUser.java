@@ -6,7 +6,7 @@ public class ItripOrderLinkUser {
   private Long id;
   private Long itrId;//
   private Long orderId;
-  private Long linkuserId;
+  private Long linkUserId;
   private String linkUserName;
   private java.sql.Timestamp creationDate;
   private Long createdBy;
@@ -19,7 +19,7 @@ public class ItripOrderLinkUser {
             "id=" + id +
             ", itrId=" + itrId +
             ", orderId=" + orderId +
-            ", linkuserId=" + linkuserId +
+            ", linkUserId=" + linkUserId +
             ", linkUserName='" + linkUserName + '\'' +
             ", creationDate=" + creationDate +
             ", createdBy=" + createdBy +
@@ -52,12 +52,12 @@ public class ItripOrderLinkUser {
     this.orderId = orderId;
   }
 
-  public Long getLinkuserId() {
-    return linkuserId;
+  public Long getLinkUserId() {
+    return linkUserId;
   }
 
-  public void setLinkuserId(Long linkuserId) {
-    this.linkuserId = linkuserId;
+  public void setLinkUserId(Long linkUserId) {
+    this.linkUserId = linkUserId;
   }
 
   public String getLinkUserName() {
