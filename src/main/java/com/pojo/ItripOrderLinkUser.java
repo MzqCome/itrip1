@@ -3,10 +3,10 @@ package com.pojo;
 import java.sql.Date;
 
 public class ItripOrderLinkUser {
-  private Integer id;
-  private Integer itrId;
-  private Integer orderId;
-  private Integer linkUserId;
+  private Integer id;//主键
+  private Integer itrId;//主键
+  private Integer orderId;//订单id
+  private Integer linkUserId;//联系人id
   private String linkUserName;
   private Date creationDate;
   private Integer createdBy;

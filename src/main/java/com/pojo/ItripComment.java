@@ -6,21 +6,21 @@ import java.util.Date;
  * Created by Administrator on 2018/1/2 0002.
  */
 public class ItripComment {
-    private Integer id;
-    private Integer hotelId;
-    private Integer productId;
-    private Integer orderId;
-    private Integer productType;
-    private String content;
-    private Integer userId;
-    private Integer isHavingImg;
-    private Integer positionScore;
-    private Integer facilitiesScore;
-    private Integer serviceScore;
-    private Integer hygieneScore;
-    private Integer score;
-    private Integer tripMode;
-    private Integer isok;
+    private Integer id;//主键
+    private Integer hotelId;//如果产品是酒店的话 改字段保存酒店id
+    private Integer productId;//商品id
+    private Integer orderId;//订单id
+    private Integer productType;//商品类型(0:旅游产品 1:酒店产品 2:机票产品)
+    private String content;//评论内容
+    private Integer userId;//用户编号
+    private Integer isHavingImg;//是否包含图片(当用户上传评论时检测)0:无图片 1:有图片
+    private Integer positionScore;//位置评分
+    private Integer facilitiesScore;//设施评分
+    private Integer serviceScore;//服务评分
+    private Integer hygieneScore;//卫生评分
+    private Integer score;//综合评分
+    private Integer tripMode;//出游类型
+    private Integer isok;//是否满意（0：有待改善 1：值得推荐）
     private Date creationDate;
     private Integer createdBy;
     private Date modifyDate;

@@ -4,8 +4,8 @@ import java.sql.Date;
 
 public class ItripHotelTradingArea {
   private Integer id;
-  private Integer hotelId;
-  private Long areaid;
+  private Integer hotelId;//酒店Id
+  private Long areaId;//商圈Id
   private Date creationDate;
   private Integer createdBy;
   private Date modifyDate;
@@ -16,7 +16,7 @@ public class ItripHotelTradingArea {
     return "ItripHotelTradingArea{" +
             "id=" + id +
             ", hotelId=" + hotelId +
-            ", areaid=" + areaid +
+            ", areaId=" + areaId +
             ", creationDate=" + creationDate +
             ", createdBy=" + createdBy +
             ", modifyDate=" + modifyDate +
@@ -40,12 +40,12 @@ public class ItripHotelTradingArea {
     this.hotelId = hotelId;
   }
 
-  public Long getAreaid() {
-    return areaid;
+  public Long getAreaId() {
+    return areaId;
   }
 
-  public void setAreaid(Long areaid) {
-    this.areaid = areaid;
+  public void setAreaId(Long areaId) {
+    this.areaId = areaId;
   }
 
   public Date getCreationDate() {

@@ -3,12 +3,12 @@ package com.pojo;
 import java.sql.Date;
 
 public class ItripLabelDic {
-  private Integer id;
-  private String name;
-  private String value;
-  private String description;
-  private Integer parentId;
-  private String pic;
+  private Integer id;//主键
+  private String name;//key值
+  private String value;//value值
+  private String description;//描述
+  private Integer parentId;//父级标签id(1级标签则为0)
+  private String pic;//标签图片地址
   private Date creationDate;
   private Integer createdBy;
   private Date modifyDate;
