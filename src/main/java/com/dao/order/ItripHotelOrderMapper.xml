@@ -32,12 +32,12 @@
     </select>
     
     <select id="queryOradeById" resultType="ItripHotelOrder">
-      SELECT o.`checkInDate`,o.`checkOutDate`
-    o.`creationDate`,r.`roomPrice`,r.`roomTitle`,
+  SELECT o.`checkInDate`,o.`checkOutDate`,
+  r.`roomPrice`,r.`roomTitle`,
     r.`satisfaction`,h.`hotelName`,h.`address`,
-    h.`hotelType`,h.`hotelLevel`,
+    h.`hotelType`,h.`hotelLevel`
      FROM `itrip_hotel_order` AS o,`itrip_hotel_room` AS r,`itrip_hotel` AS h
-    WHERE o.id = #{orderId}
+    WHERE o.id = 104
  AND o.`hotelId` = h.id AND o.`roomId` = r.id
     </select>
     <delete id="delOrder" parameterType="Integer">
