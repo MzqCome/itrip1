@@ -30,7 +30,7 @@ public class ItripUserLinkUser {
 
     @Override
     public String toString() {
-        return "ItripUserLinkUser{" +
+        return "ItripUserLinkUserMapper{" +
                 "id=" + id +
                 ", linkUserName='" + linkUserName + '\'' +
                 ", linkIdCard='" + linkIdCard + '\'' +

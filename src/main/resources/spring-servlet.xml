@@ -5,17 +5,17 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
 	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <mvc:interceptors>
+    <!--<mvc:interceptors>
         <mvc:interceptor>
-            <!-- 匹配的是url路径， 如果不配置或/**,将拦截所有的Controller -->
-            <mvc:mapping path="/dev/flatform/**" />
+            &lt;!&ndash; 匹配的是url路径， 如果不配置或/**,将拦截所有的Controller &ndash;&gt;
+            <mvc:mapping path="*" />
             <bean class="com.filter.LoginInterceptor"></bean>
         </mvc:interceptor>
-        <!-- 当设置多个拦截器时，先按顺序调用preHandle方法，然后逆序调用每个拦截器的postHandle和afterCompletion方法 -->
-    </mvc:interceptors>
+        &lt;!&ndash; 当设置多个拦截器时，先按顺序调用preHandle方法，然后逆序调用每个拦截器的postHandle和afterCompletion方法 &ndash;&gt;
+    </mvc:interceptors>-->
     <mvc:annotation-driven></mvc:annotation-driven>
     <mvc:annotation-driven>
-        <mvc:message-converters>
+       <!-- <mvc:message-converters>
 
             <bean class="org.springframework.http.converter.StringHttpMessageConverter">
                 <property name="supportedMediaTypes">
@@ -40,7 +40,7 @@
 
             <bean class="org.springframework.http.converter.StringHttpMessageConverter"/>
             <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
-        </mvc:message-converters>
+        </mvc:message-converters>-->
     </mvc:annotation-driven>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
