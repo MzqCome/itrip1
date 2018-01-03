@@ -37,5 +37,20 @@ public class ItripUserLinkUserServiceImpl implements ItripUserLinkUserService {
         return itripUserLinkUserMapper.queryLinkUserByID(linkUserId);
     }
 
+    @Override
+    public Integer addLinkUser(ItripUserLinkUser itripUserLinkUser) {
+        return itripUserLinkUserMapper.addLinkUser(itripUserLinkUser);
+    }
+
+    @Override
+    public Integer updateLinkUser(ItripUserLinkUser itripUserLinkUser) {
+        return itripUserLinkUserMapper.updateLinkUser(itripUserLinkUser);
+    }
+
+    @Override
+    public Integer delLinkUser(Integer linkUserId) {
+        return itripUserLinkUserMapper.delLinkUser(linkUserId);
+    }
+
 
 }

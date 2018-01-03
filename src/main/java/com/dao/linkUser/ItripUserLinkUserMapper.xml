@@ -14,4 +14,19 @@
     <select id="queryLinkUserByID" resultType="ItripUserLinkUser" parameterType="Integer">
         SELECT * FROM `itrip_user_link_user` WHERE id = #{linkUserId}
     </select>
+
+    <insert id="addLinkUser" parameterType="ItripUserLinkUser">
+      INSERT INTO `itrip`.`itrip_user_link_user` ( `linkUserName`, `linkIdCard`, `linkPhone`, `userId`, `linkIdCardType`)
+       VALUES (#{linkUserName},#{linkIdCard},#{linkPhone},#{userId},#{linkIdCardType})
+    </insert>
+
+    <update id="updateLinkUser" parameterType="integer">
+      UPDATE `itrip`.`itrip_user_link_user` SET `linkUserName` = #{linkUserName},
+       `linkIdCard` =#{linkIdCard}, `linkPhone` = #{linkPhone},
+        `linkIdCardType` = #{linkIdCardType} WHERE `id` = #{id}
+    </update>
+
+    <delete id="delLinkUser" parameterType="Integer">
+        DELETE FROM `itrip`.`itrip_user_link_user` WHERE `id` = #{linkUserId}
+    </delete>
 </mapper>
