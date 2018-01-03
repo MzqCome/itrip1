@@ -1,4 +1,4 @@
-package com.dao;
+package com.dao.hotel;
 
 import com.pojo.ItripHotel;
 import org.apache.ibatis.annotations.Param;
@@ -13,4 +13,5 @@ public interface HotelMapper {
     public List<ItripHotel> queryAllByHotelName(@Param("hotelName") String hotelName);
     //通過酒店地址查询所有酒店
     public List<ItripHotel> queryAllByAddress(@Param("queryAllByAddress") String queryAllByAddress);
+
 }

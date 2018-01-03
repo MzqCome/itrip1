@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.dao.HotelMapper">
+<mapper namespace="com.dao.hotel.HotelMapper">
     <resultMap id="itripHotalMap" type="ItripHotel">
         <id property="id" column="id"/>
     </resultMap>
@@ -10,9 +10,6 @@
             `itrip_hotel`.`id`=`itrip_image`.`id`
             <if test="hotelName != null and hotelName != ''">
                 and itrip_hotel.hotelName like CONCAT ('%',#{hotelName},'%')
-            </if>
-            <if test="address != null and hotelName != ''">
-                and itrip_hotel.address like CONCAT ('%',#{address},'%')
             </if>
         </trim>
     </select>

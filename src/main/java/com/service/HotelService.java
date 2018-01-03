@@ -8,5 +8,9 @@ import java.util.List;
  * Created by dell on 2018/1/2.
  */
 public interface HotelService {
-    public List<ItripHotel> queryAllByHotelName(String hotelName);
+    public List<ItripHotel> queryAllByHotelName(String hotel);
+
+    public List<ItripHotel> queryAllByAddress(String hotel);
+
+
 }

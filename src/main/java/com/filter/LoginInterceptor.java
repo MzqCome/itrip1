@@ -13,7 +13,6 @@ import javax.servlet.http.HttpSession;
  * Created by main on 2017/12/22.
  */
 public class LoginInterceptor implements HandlerInterceptor {
-    @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         HttpSession session=request.getSession();
             ItripUser user = new ItripUser();
@@ -32,12 +31,10 @@ public class LoginInterceptor implements HandlerInterceptor {
 
     }
 
-    @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
 
     }
 
-    @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
 
     }

@@ -1,6 +1,6 @@
 package com.service;
 
-import com.dao.HotelMapper;
+import com.dao.hotel.HotelMapper;
 import com.pojo.ItripHotel;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +16,11 @@ public class HotelServiceImpl implements HotelService {
     private HotelMapper hotelMapper;
 
 
-    public List<ItripHotel> queryAllByHotelName(String hotelName) {
-        return hotelMapper.queryAllByHotelName(hotelName);
+    public List<ItripHotel> queryAllByHotelName(String hotel) {
+        return hotelMapper.queryAllByHotelName(hotel);
+    }
+
+    public List<ItripHotel> queryAllByAddress(String hotel) {
+        return hotelMapper.queryAllByAddress(hotel);
     }
 }
