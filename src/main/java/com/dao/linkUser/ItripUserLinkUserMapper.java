@@ -35,4 +35,27 @@ public interface ItripUserLinkUserMapper {
     ItripUserLinkUser queryLinkUserByID(Integer linkUserId);
 
 
+    /**
+     * 添加旅客
+     * @return
+     */
+    Integer addLinkUser(ItripUserLinkUser itripUserLinkUser);
+
+
+    /**
+     * 更新旅客
+     * @param itripUserLinkUser
+     * @return
+     */
+    Integer updateLinkUser(ItripUserLinkUser itripUserLinkUser);
+
+
+    /**
+     * 删除旅客
+     * @param linkUserId
+     * @return
+     */
+    Integer delLinkUser(Integer linkUserId);
+
+
 }
