@@ -17,8 +17,19 @@ public class HotelServiceTest {
     @Resource
     private HotelService hotelService;
     @Test
-    public void queryAll() throws Exception {
-        List<ItripHotel> list=hotelService.queryAllByHotelName("皇冠");
+    public void queryAllHotleName() throws Exception {
+        List<ItripHotel> list=hotelService.queryAllByHotelName("东四");
+        if(list!=null){
+            for (ItripHotel itripHotel : list) {
+                System.out.println(itripHotel);
+            }
+        }
+    }
+
+
+    @Test
+    public void queryAllByAddress() throws Exception {
+        List<ItripHotel> list = hotelService.queryAllByAddress("大豆");
         if(list!=null){
             for (ItripHotel itripHotel : list) {
                 System.out.println(itripHotel);

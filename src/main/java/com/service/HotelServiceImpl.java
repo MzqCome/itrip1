@@ -23,4 +23,8 @@ public class HotelServiceImpl implements HotelService {
     public List<ItripHotel> queryAllByAddress(String hotel) {
         return hotelMapper.queryAllByAddress(hotel);
     }
+
+    public List<ItripHotel> queryAll() {
+        return null;
+    }
 }

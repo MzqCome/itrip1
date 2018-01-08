@@ -12,5 +12,7 @@ public interface HotelService {
 
     public List<ItripHotel> queryAllByAddress(String hotel);
 
+    //没有参数 查所有
+    public List<ItripHotel> queryAll();
 
 }

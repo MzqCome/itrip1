@@ -27,6 +27,12 @@ public class ItripHotel {
     private Date modifyDate;
     private Integer modifiedBy;
 
+    //图片表 数据
+    private String type;//图片类型(0:酒店图片1:房间图片2:评论图片)
+    private Integer targetId;//关联id
+    private Integer position;//图片s上传顺序位置
+    private String imgUrl;//图片地址
+
     @Override
     public String toString() {
         return "ItripHotel{" +
@@ -50,7 +56,43 @@ public class ItripHotel {
                 ", createdBy=" + createdBy +
                 ", modifyDate=" + modifyDate +
                 ", modifiedBy=" + modifiedBy +
+                ", type='" + type + '\'' +
+                ", targetId=" + targetId +
+                ", position=" + position +
+                ", imgUrl='" + imgUrl + '\'' +
                 '}';
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public Integer getTargetId() {
+        return targetId;
+    }
+
+    public void setTargetId(Integer targetId) {
+        this.targetId = targetId;
+    }
+
+    public Integer getPosition() {
+        return position;
+    }
+
+    public void setPosition(Integer position) {
+        this.position = position;
+    }
+
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
     }
 
     public Integer getId() {

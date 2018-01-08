@@ -6,21 +6,18 @@
     </resultMap>
     <select id="queryAllByHotelName" resultType="ItripHotel">
         SELECT	`itrip_hotel`.*,`itrip_image`.`imgUrl` FROM `itrip_image`,`itrip_hotel`
-        <trim prefix="where" prefixOverrides="and | or">
-            `itrip_hotel`.`id`=`itrip_image`.`id`
-            <if test="hotelName != null and hotelName != ''">
-                and itrip_hotel.hotelName like CONCAT ('%',#{hotelName},'%')
-            </if>
-        </trim>
+           where `itrip_hotel`.`id`=`itrip_image`.`id`
+          and itrip_hotel.hotelName like CONCAT ('%',#{hotelName},'%')
     </select>
 
     <select id="queryAllByAddress" resultType="ItripHotel">
         SELECT	`itrip_hotel`.*,`itrip_image`.`imgUrl` FROM `itrip_image`,`itrip_hotel`
-        <trim prefix="where" prefixOverrides="and | or">
-            `itrip_hotel`.`id`=`itrip_image`.`id`
-            <if test="address != null and hotelName != ''">
-                and itrip_hotel.address like CONCAT ('%',#{address},'%')
-            </if>
-        </trim>
+            where `itrip_hotel`.`id`=`itrip_image`.`id`
+         and itrip_hotel.address like CONCAT ('%',#{address},'%')
+    </select>
+
+    <select id="queryAll" resultType="ItripHotel">
+        SELECT	`itrip_hotel`.*,`itrip_image`.`imgUrl` FROM `itrip_image`,`itrip_hotel`
+        where `itrip_hotel`.`id`=`itrip_image`.`id`
     </select>
 </mapper>
