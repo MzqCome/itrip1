@@ -43,6 +43,8 @@ public class ItripHotelRoom {
             '}';
   }
 
+
+
   public Integer getId() {
     return id;
   }

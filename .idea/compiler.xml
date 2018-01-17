@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="itrip" />
+        <module name="redisDemo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="itrip" target="1.5" />
+      <module name="redisDemo" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

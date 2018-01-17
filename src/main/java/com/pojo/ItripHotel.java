@@ -27,11 +27,16 @@ public class ItripHotel {
     private Date modifyDate;
     private Integer modifiedBy;
 
-    //图片表 数据
-    private String type;//图片类型(0:酒店图片1:房间图片2:评论图片)
-    private Integer targetId;//关联id
-    private Integer position;//图片s上传顺序位置
-    private String imgUrl;//图片地址
+    //    //图片表 数据
+//    private String type;//图片类型(0:酒店图片1:房间图片2:评论图片)
+//    private Integer targetId;//关联id
+//    private Integer position;//图片s上传顺序位置
+//    private String imgUrl;//图片地址
+    private ItripHotelRoom itripHotelRoom;
+    private ItripImage itripImage;
+    private ItripHotelOrder itripHotelOrder;
+    private ItripHotelTradingArea itripHotelTradingArea;
+    private Count count;
 
     @Override
     public String toString() {
@@ -56,44 +61,84 @@ public class ItripHotel {
                 ", createdBy=" + createdBy +
                 ", modifyDate=" + modifyDate +
                 ", modifiedBy=" + modifiedBy +
-                ", type='" + type + '\'' +
-                ", targetId=" + targetId +
-                ", position=" + position +
-                ", imgUrl='" + imgUrl + '\'' +
+                ", itripHotelRoom=" + itripHotelRoom +
+                ", itripImage=" + itripImage +
+                ", itripHotelOrder=" + itripHotelOrder +
+                ", itripHotelTradingArea=" + itripHotelTradingArea +
+                ", count=" + count +
                 '}';
     }
 
-    public String getType() {
-        return type;
+    public ItripHotelTradingArea getItripHotelTradingArea() {
+        return itripHotelTradingArea;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setItripHotelTradingArea(ItripHotelTradingArea itripHotelTradingArea) {
+        this.itripHotelTradingArea = itripHotelTradingArea;
     }
 
-    public Integer getTargetId() {
-        return targetId;
+    public Count getCount() {
+        return count;
     }
 
-    public void setTargetId(Integer targetId) {
-        this.targetId = targetId;
+    public void setCount(Count count) {
+        this.count = count;
     }
 
-    public Integer getPosition() {
-        return position;
+    public ItripHotelRoom getItripHotelRoom() {
+        return itripHotelRoom;
     }
 
-    public void setPosition(Integer position) {
-        this.position = position;
+    public void setItripHotelRoom(ItripHotelRoom itripHotelRoom) {
+        this.itripHotelRoom = itripHotelRoom;
     }
 
-    public String getImgUrl() {
-        return imgUrl;
+    public ItripImage getItripImage() {
+        return itripImage;
     }
 
-    public void setImgUrl(String imgUrl) {
-        this.imgUrl = imgUrl;
+    public void setItripImage(ItripImage itripImage) {
+        this.itripImage = itripImage;
     }
+
+    public ItripHotelOrder getItripHotelOrder() {
+        return itripHotelOrder;
+    }
+
+    public void setItripHotelOrder(ItripHotelOrder itripHotelOrder) {
+        this.itripHotelOrder = itripHotelOrder;
+    }
+    //    public String getType() {
+//        return type;
+//    }
+//
+//    public void setType(String type) {
+//        this.type = type;
+//    }
+//
+//    public Integer getTargetId() {
+//        return targetId;
+//    }
+//
+//    public void setTargetId(Integer targetId) {
+//        this.targetId = targetId;
+//    }
+//
+//    public Integer getPosition() {
+//        return position;
+//    }
+//
+//    public void setPosition(Integer position) {
+//        this.position = position;
+//    }
+//
+//    public String getImgUrl() {
+//        return imgUrl;
+//    }
+//
+//    public void setImgUrl(String imgUrl) {
+//        this.imgUrl = imgUrl;
+//    }
 
     public Integer getId() {
         return id;

@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/itrip.iml" filepath="$PROJECT_DIR$/itrip.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../redisDemo/redisDemo.iml" filepath="$PROJECT_DIR$/../redisDemo/redisDemo.iml" />
     </modules>
   </component>
 </project>
