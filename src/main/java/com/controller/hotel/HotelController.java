@@ -2,7 +2,7 @@ package com.controller.hotel;
 
 import com.github.pagehelper.PageInfo;
 import com.pojo.ItripHotel;
-import com.service.HotelService;
+import com.service.hote.HotelService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;

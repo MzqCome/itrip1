@@ -9,6 +9,7 @@
         <collection property="itripHotelTradingArea" resultMap="itripHotelTradingAreaMap"/>
         <collection property="count" resultMap="countMap"/>
     </resultMap>
+
     <resultMap id="countMap" type="Count">
         <id column="id" property="id"/>
     </resultMap>
@@ -26,6 +27,8 @@
     <resultMap id="itripHotelTradingAreaMap" type="ItripHotelTradingArea">
         <id column="id" property="id"/>
     </resultMap>
+
+    <!--根据商圈搜索酒店-->
     <select id="queryAllByName" resultMap="itripHotalMap">
         SELECT `itrip_hotel`.`id` ih_id,`itrip_image`.id ii_id,
         `itrip_hotel`.`address`,`itrip_hotel`.`hotelName`,`itrip_image`.`imgUrl`,room.`roomPrice`
@@ -43,28 +46,71 @@
         )AND `itrip_hotel`.`cityId`=#{cityId}
         AND dic.`areaNo`=area.areaId
         AND `itrip_hotel`.`id`=area.hotelId
-        AND `itrip_hotel`.`hotelLevel`=4
+
         AND dic.`NAME`=#{Name}
         AND `itrip_hotel`.`id`=`itrip_image`.`id`
         AND room.`hotelId`=`itrip_hotel`.`id`
         GROUP BY `itrip_hotel`.hotelName
-
     </select>
 
-    <select id="queryAllByAddress" resultType="ItripHotel">
-        SELECT	`itrip_hotel`.*,`itrip_image`.`imgUrl` FROM `itrip_image`,`itrip_hotel`
-            where `itrip_hotel`.`id`=`itrip_image`.`id`
-         and itrip_hotel.address like CONCAT ('%',#{address},'%')
+    <!--根据酒店地址搜索酒店-->
+    <select id="queryAllByAddress" resultMap="itripHotalMap">
+        SELECT `itrip_hotel`.`address`,`itrip_hotel`.`hotelName`,`itrip_image`.`imgUrl`,`itrip_hotel_room`.`roomPrice`
+        FROM `itrip_hotel_room`,`itrip_image`,`itrip_hotel`,`itrip_area_dic` dic,`itrip_hotel_trading_area` are
+        WHERE `itrip_hotel`.`id` NOT IN (
+        SELECT `count`.`hotelId` FROM `count`,`itrip_hotel_order` WHERE `count`.`count`  IN(
+        SELECT COUNT(*) FROM `itrip_hotel_order`
+        WHERE `itrip_hotel_order`.`checkOutDate`<![CDATA[ >= ]]>#{checkInDate}
+        AND `itrip_hotel_order`.`checkInDate`<![CDATA[ <= ]]>#{checkInDate}
+        AND `itrip_hotel_order`.`checkOutDate`<![CDATA[ >= ]]>#{checkOutDate}
+        AND `itrip_hotel_order`.`checkInDate`<![CDATA[ <= ]]>#{checkOutDate}
+        GROUP BY `itrip_hotel_order`.`hotelId`
+
+        )AND `itrip_hotel_order`.`hotelId` = `count`.`hotelId` GROUP BY `itrip_hotel_order`.`hotelId`
+        )AND `itrip_hotel`.`cityId`=#{cityId}
+        AND dic.`areaNo`=are.areaId
+        AND `itrip_hotel`.`id`=are.hotelId
+
+        AND itrip_hotel.address LIKE CONCAT ('%',#{address},'%')
+        AND `itrip_hotel`.`id`=`itrip_image`.`id`
+        AND `itrip_hotel_room`.`hotelId`=`itrip_hotel`.`id`
+        GROUP BY `itrip_hotel`.`hotelName`
     </select>
 
-    <select id="queryAll" resultType="ItripHotel">
-        SELECT	`itrip_hotel`.*,`itrip_image`.`imgUrl` FROM `itrip_image`,`itrip_hotel`
-        where `itrip_hotel`.`id`=`itrip_image`.`id`
+    <!--根据酒店名称搜索酒店-->
+    <select id="queryAllByHotelName" resultMap="itripHotalMap">
+        SELECT `itrip_hotel`.`address`,`itrip_hotel`.`hotelName`,`itrip_image`.`imgUrl`,`itrip_hotel_room`.`roomPrice`
+        FROM `itrip_hotel_room`,`itrip_image`,`itrip_hotel`,`itrip_area_dic` dic,`itrip_hotel_trading_area` are
+        WHERE `itrip_hotel`.`id` NOT IN (
+        SELECT `count`.`hotelId` FROM `count`,`itrip_hotel_order` WHERE `count`.`count`  IN(
+        SELECT COUNT(*) FROM `itrip_hotel_order`
+        WHERE `itrip_hotel_order`.`checkOutDate`<![CDATA[ >= ]]>#{checkInDate}
+        AND `itrip_hotel_order`.`checkInDate`<![CDATA[ <= ]]>#{checkInDate}
+        AND `itrip_hotel_order`.`checkOutDate`<![CDATA[ >= ]]>#{checkOutDate}
+        AND `itrip_hotel_order`.`checkInDate`<![CDATA[ <= ]]>#{checkOutDate}
+        GROUP BY `itrip_hotel_order`.`hotelId`
+
+        )AND `itrip_hotel_order`.`hotelId` = `count`.`hotelId` GROUP BY `itrip_hotel_order`.`hotelId`
+        )AND `itrip_hotel`.`cityId`=#{cityId}
+        AND dic.`areaNo`=are.areaId
+        AND `itrip_hotel`.`id`=are.hotelId
+
+        AND itrip_hotel.address LIKE CONCAT ('%',#{hotelName},'%')
+        AND `itrip_hotel`.`id`=`itrip_image`.`id`
+        AND `itrip_hotel_room`.`hotelId`=`itrip_hotel`.`id`
+        GROUP BY `itrip_hotel`.`hotelName`
     </select>
 
-    <select id="queryAllByCity" resultType="ItripHotel">
-        SELECT dic.`NAME`,tel.`hotelName` FROM `itrip_area_dic` dic,`itrip_hotel` tel
-        WHERE tel.`cityId`=#{cityId}
-        AND dic.`id`=tel.`cityId`
-    </select>
+
+
+
+
+
+
+
+
+
+
+
+
 </mapper>

@@ -17,16 +17,16 @@ public interface HotelMapper {
                                                 @Param("checkInDate")Date checkInDate,
                                                 @Param("checkOutDate")Date checkOutDate
                                                 );
+    //根据酒店 地址 查询所有酒店(模糊查询)
+    public List<ItripHotel> queryAllByAddress(@Param("cityId") Integer cityId,
+                                              @Param("address") String address,
+                                              @Param("checkInDate")Date checkInDate,
+                                              @Param("checkOutDate")Date checkOutDate
+                                              );
 
-    //通過酒店地址查询所有酒店
-    public List<ItripHotel> queryAllByAddress(String address);
-
-    //没有参数 查所有
-    public List<ItripHotel> queryAll();
-
-    //通过地域等级 筛查酒店列表(如查询北京市或河北省下的所有酒店列表)
-    public List<ItripHotel> queryAllByCity(Integer cityId);
-
-
-
+    //根据酒店 名称 查询所有酒店(模糊查询)
+    public List<ItripHotel> queryAllByHotelName(@Param("cityId") Integer cityId,
+                                              @Param("hotelName") String hotelName,
+                                              @Param("checkInDate")Date checkInDate,
+                                              @Param("checkOutDate")Date checkOutDate);
 }

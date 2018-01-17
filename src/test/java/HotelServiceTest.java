@@ -1,6 +1,6 @@
 import com.github.pagehelper.PageInfo;
 import com.pojo.ItripHotel;
-import com.service.HotelService;
+import com.service.hote.HotelService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -38,32 +38,44 @@ public class HotelServiceTest {
         }
     }
 
+    @Test
+    public void queryAllByAddress() throws Exception  {
+        Date startDate = new Date();
+        Date endDate = new Date();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-DD");
+        startDate = simpleDateFormat.parse("2018-1-13");
+        endDate = simpleDateFormat.parse("2018-1-14");
+        PageInfo<ItripHotel> pageInfo = hotelService.queryAllByAddress(1, 1, 3662, "大",startDate,endDate);
+        if (pageInfo != null) {
+            System.out.println(pageInfo);
+            List<ItripHotel> list1 = pageInfo.getList();
+            if (list1 != null) {
+                for (ItripHotel itripHotel : list1) {
+                    System.out.println(itripHotel);
+                }
+            }
+        }
+    }
 
     @Test
-    public void queryAllByAddress() throws Exception {
-        List<ItripHotel> list = hotelService.queryAllByAddress("大豆");
-        if(list!=null){
-            for (ItripHotel itripHotel : list) {
-                System.out.println(itripHotel);
+    public void queryAllByHotelName() throws Exception  {
+        Date startDate = new Date();
+        Date endDate = new Date();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-DD");
+        startDate = simpleDateFormat.parse("2018-1-13");
+        endDate = simpleDateFormat.parse("2018-1-14");
+        PageInfo<ItripHotel> pageInfo = hotelService.queryAllByHotelName(1, 1, 3662, "东四",startDate,endDate);
+        if (pageInfo != null) {
+            System.out.println(pageInfo);
+            List<ItripHotel> list1 = pageInfo.getList();
+            if (list1 != null) {
+                for (ItripHotel itripHotel : list1) {
+                    System.out.println(itripHotel);
+                }
             }
         }
     }
-    @Test
-    public void queryAll(){
-        List<ItripHotel> list = hotelService.queryAll();
-        if (list != null) {
-            for (ItripHotel itripHotel1 : list) {
-                System.out.println(itripHotel1);
-            }
-        }
-    }
-    @Test
-    public void queryAllByCityId(){
-        List<ItripHotel> list = hotelService.queryAllByCity(3662);
-        if (list != null) {
-            for (ItripHotel itripHotel : list) {
-                System.out.println(itripHotel);
-            }
-        }
-    }
+
+
+
 }
