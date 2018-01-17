@@ -76,6 +76,24 @@ public class HotelServiceTest {
         }
     }
 
+    @Test
+    public void queryAll() throws Exception {
+        Date startDate = new Date();
+        Date endDate = new Date();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-DD");
+        startDate = simpleDateFormat.parse("2018-1-13");
+        endDate = simpleDateFormat.parse("2018-1-14");
+        PageInfo<ItripHotel> pageInfo = hotelService.queryAll(1, 2, 3662, startDate, endDate);
+        if (pageInfo != null) {
+            List<ItripHotel> list = pageInfo.getList();
+            if (list != null) {
+                for (ItripHotel itripHotel : list) {
+                    System.out.println(itripHotel);
+                }
+            }
+        }
+    }
+
 
 
 }

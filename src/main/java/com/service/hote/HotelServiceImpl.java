@@ -42,6 +42,14 @@ public class HotelServiceImpl implements HotelService {
         return pageInfo3;
     }
 
+    /*查询所有酒店*/
+    public PageInfo<ItripHotel> queryAll(Integer pageNum, Integer pageSize, Integer cityId, Date checkInDate, Date checkOutDate) {
+        PageHelper.startPage(pageNum, pageSize);
+        List<ItripHotel> list =hotelMapper.queryAll(cityId, checkInDate, checkOutDate);
+        PageInfo<ItripHotel> pageInfo = new PageInfo<ItripHotel>(list);
+        return pageInfo;
+    }
+
 
 
 

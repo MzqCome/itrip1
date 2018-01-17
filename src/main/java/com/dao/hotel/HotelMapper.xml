@@ -101,6 +101,31 @@
         GROUP BY `itrip_hotel`.`hotelName`
     </select>
 
+    <!--查询所有酒店 没有条件-->
+    <select id="queryAll" resultType="ItripHotel">
+        SELECT `itrip_hotel`.`address`,`itrip_hotel`.`hotelName`,`itrip_image`.`imgUrl`,`itrip_hotel_room`.`roomPrice`
+        FROM `itrip_hotel_room`,`itrip_image`,`itrip_hotel`,`itrip_area_dic` dic,`itrip_hotel_trading_area` are
+        WHERE `itrip_hotel`.`id` NOT IN (
+        SELECT `count`.`hotelId` FROM `count`,`itrip_hotel_order` WHERE `count`.`count`  IN(
+        SELECT COUNT(*) FROM `itrip_hotel_order`
+        WHERE `itrip_hotel_order`.`checkOutDate`<![CDATA[ >= ]]> #{checkInDate}
+        AND `itrip_hotel_order`.`checkInDate`<![CDATA[ <= ]]> #{checkInDate}
+        AND `itrip_hotel_order`.`checkOutDate`<![CDATA[ >= ]]> #{checkOutDate}
+        AND `itrip_hotel_order`.`checkInDate`<![CDATA[ <= ]]> #{checkOutDate}
+        GROUP BY `itrip_hotel_order`.`hotelId`
+
+        )AND `itrip_hotel_order`.`hotelId` = `count`.`hotelId` GROUP BY `itrip_hotel_order`.`hotelId`
+        )AND `itrip_hotel`.`cityId`=#{cityId}
+        AND dic.`areaNo`=are.areaId
+        AND `itrip_hotel`.`id`=are.hotelId
+        AND `itrip_hotel`.`id`=`itrip_image`.`id`
+        AND `itrip_hotel_room`.`hotelId`=`itrip_hotel`.`id`
+        GROUP BY `itrip_hotel`.`hotelName`
+
+    </select>
+
+
+
 
 
 

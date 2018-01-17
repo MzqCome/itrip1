@@ -22,6 +22,10 @@ public interface HotelService {
     public PageInfo<ItripHotel> queryAllByHotelName
     (Integer pageNum, Integer pageSize,Integer cityId, String hotelName, Date checkInDate, Date checkOutDate);
 
+    //没有参数 查所有
+    public PageInfo<ItripHotel> queryAll(Integer pageNum, Integer pageSize,Integer cityId,Date checkInDate, Date checkOutDate);
+
+
 
 
 

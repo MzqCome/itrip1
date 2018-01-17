@@ -29,4 +29,11 @@ public interface HotelMapper {
                                               @Param("hotelName") String hotelName,
                                               @Param("checkInDate")Date checkInDate,
                                               @Param("checkOutDate")Date checkOutDate);
+
+    //查询所有酒店（当前城市下的所有酒店列表）
+    public List<ItripHotel> queryAll(@Param("cityId") Integer cityId,
+                                     @Param("checkInDate")Date checkInDate,
+                                     @Param("checkOutDate")Date checkOutDate);
+
+
 }
